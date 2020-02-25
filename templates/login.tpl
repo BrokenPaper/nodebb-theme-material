@@ -28,6 +28,14 @@
 				</label>
 			</div>
 
+			{{{each loginFormEntry}}}
+			<div class="form-group loginFormEntry">
+				<label for="login-{loginFormEntry.styleName}" class="col-lg-4 control-label">{loginFormEntry.label}</label>
+				<div id="login-{loginFormEntry.styleName}" class="col-lg-8">{{loginFormEntry.html}}</div>
+			</div>
+			{{{end}}}
+			<input type="hidden" name="_csrf" value="{config.csrf_token}" />
+			<input type="hidden" name="noscript" id="noscript" value="true" />
 			<button class="btn btn-primary btn-lg btn-block" id="login" type="submit">[[global:login]]</button>
 
 			<div class="login-options">
